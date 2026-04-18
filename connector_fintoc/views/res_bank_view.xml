@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_partner_bank_form_fintoc">
+        <field name="name">view.partner.bank.form.fintoc.inherit</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+            <sheet position="before">
+                <header>
+                    <button string="Update" type="object" name="update_id"/>
+                </header>
+            </sheet>
+            <xpath expr="//field[@name='bank_id']" position="after">
+                <field name="fintoc_token" colspan="2"/>
+                <field name="fintoc_id" colspan="2" invisible="not fintoc_token"/>
+                <field name="fintoc_days" colspan="2"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
