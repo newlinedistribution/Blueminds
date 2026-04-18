@@ -1,0 +1,2 @@
+# Blueminds
+repositorio
